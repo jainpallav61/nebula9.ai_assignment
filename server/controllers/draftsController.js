@@ -1,9 +1,7 @@
-// controllers/authController.js
 const User = require('../models/user');
 const jwt = require('jsonwebtoken');
 const Draft = require('../models/draft');
 
-// Register a new user
 exports.register = async (req, res) => {
     try {
         const { username, email, password } = req.body;
@@ -15,7 +13,6 @@ exports.register = async (req, res) => {
     }
 };
 
-// Login a user
 exports.login = async (req, res) => {
     try {
         const { email, password } = req.body;
@@ -30,7 +27,6 @@ exports.login = async (req, res) => {
     }
 };
 
-// Middleware to authenticate users
 exports.authenticate = (req, res, next) => {
     const token = req.headers.authorization?.split(' ')[1];
     if (!token) return res.status(401).json({ message: 'Access denied' });
@@ -48,18 +44,15 @@ exports.saveDraft = async (req, res) => {
     try {
         const { title, content, keywords } = req.body;
 
-        // Create a new draft linked to the authenticated user
         const draft = new Draft({
-            user: req.user.userId, // req.user is populated by the authentication middleware
+            user: req.user.userId, 
             title,
             content,
             keywords,
         });
 
-        // Save the draft to the database
         await draft.save();
 
-        // Respond with the saved draft
         res.status(201).json({ draft });
     } catch (error) {
         res.status(400).json({ error: error.message });

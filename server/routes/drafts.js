@@ -1,4 +1,3 @@
-// routes/drafts.js
 const express = require('express');
 const router = express.Router();
 const { saveDraft, getDrafts } = require('../controllers/draftsController');

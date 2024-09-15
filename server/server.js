@@ -1,4 +1,3 @@
-// server.js
 const express = require('express');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
@@ -9,9 +8,9 @@ dotenv.config();
 connectDB();
 
 const corsOptions = {
-    origin: 'http://localhost:5173', // Replace with the frontend's URL
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow specific methods if necessary
-    credentials: true, // Enable if your requests include cookies or authentication tokens
+    origin: 'http://localhost:5173', 
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], 
+    credentials: true, 
 }
 
 const app = express();

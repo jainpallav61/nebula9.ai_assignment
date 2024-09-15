@@ -1,4 +1,3 @@
-// models/Draft.js
 const mongoose = require('mongoose');
 
 const DraftSchema = new mongoose.Schema({

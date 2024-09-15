@@ -1,10 +1,8 @@
-// controllers/authController.js
 const User = require('../models/user');
 const jwt = require('jsonwebtoken');
 const dotenv = require('dotenv');
 dotenv.config();
 
-// Register a new user
 exports.register = async (req, res) => {
     try {
         const { username, email, password } = req.body;
@@ -16,7 +14,6 @@ exports.register = async (req, res) => {
     }
 };
 
-// Login a user
 exports.login = async (req, res) => {
     try {
         const { email, password } = req.body;
@@ -32,7 +29,6 @@ exports.login = async (req, res) => {
     }
 };
 
-// Middleware to authenticate users
 exports.authenticate = (req, res, next) => {
     const token = req.headers.authorization?.split(' ')[1];
     if (!token) return res.status(401).json({ message: 'Access denied' });
