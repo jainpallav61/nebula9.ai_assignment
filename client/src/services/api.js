@@ -20,3 +20,5 @@ export const login = (userData) => API.post('/auth/login', userData);
 export const saveDraft = (draftData) => API.post('/drafts/save', draftData);
 export const getDrafts = () => API.get('/drafts');
 export const generateContent = (keywords) => API.post('/drafts/generate', { keywords });
+
+export const postContent = (postData) => API.post('/drafts/postContent', postData);

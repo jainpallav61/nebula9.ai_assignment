@@ -1,4 +1,3 @@
-const OpenAI = require("openai");
 const dotenv = require("dotenv");
 const Groq = require("groq-sdk");
 
