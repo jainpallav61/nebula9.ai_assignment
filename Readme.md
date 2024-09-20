@@ -1,8 +1,9 @@
 # Automated Blogging Assistant
 
-A comprehensive blogging platform with an elegant frontend built using React and Material-UI and a robust backend using Node.js, Express, and MongoDB. This project provides user authentication, blog draft creation, and AI-powered content generation.
+A comprehensive blogging platform with an elegant frontend built using React and Material-UI and a robust backend using Node.js, Express, and MongoDB. This project provides user authentication, blog draft creation, AI-powered content generation, and the ability to publish blogs to medium directly.
 
 ## Table of Contents
+- [Deployment](#deployment)
 - [Features](#features)
 - [Project Structure](#project-structure)
 - [Technologies Used](#technologies-used)
@@ -10,13 +11,18 @@ A comprehensive blogging platform with an elegant frontend built using React and
 - [Installation](#installation)
 - [Usage](#usage)
 - [API Integration](#api-integration)
-- [Contributing](#contributing)
-- [License](#license)
+
+## Deployment
+This project is deployed on Render:
+
+- Frontend: Hosted at `https://automated-blogging-assistant-frontend.onrender.com/`
+- Backend: Hosted at `https://automated-blogging-assistant-backend.onrender.com`
 
 ## Features
 - **User Authentication:** Secure user login and registration.
 - **Draft Management:** Create, view, and manage blog drafts.
 - **Content Generation:** AI-powered content generation based on user input.
+- **Publish Blog:** Publish generated content to Medium directly from the platform.
 - **Private Routes:** Only accessible by authenticated users.
 - **Responsive UI:** Built with Material-UI for a modern, mobile-friendly interface.
 - **RESTful API:** Backend API built with Express, including authentication and data management.
@@ -99,8 +105,8 @@ automated-blogging-assistant/
 ## Installation
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/automated-blogging-assistant.git
-cd automated-blogging-assistant
+git clone https://github.com/jainpallav61/nebula9.ai_assignment.git
+cd nebula9.ai_assignment
 ```
 
 ### 2. Setup the Backend (Server)
@@ -118,6 +124,7 @@ cd automated-blogging-assistant
     MONGODB_URI=mongodb://localhost:27017/your-database-name
     JWT_SECRET=your-secret-key
     GROQ_API_KEY=your-groq-api-key
+    MEDIUM_TOKEN=your-medium-token
     ```
 4. Start the server:
     ```bash
@@ -136,7 +143,7 @@ cd automated-blogging-assistant
     ```
 3. Start the client:
     ```bash
-    npm start
+    npm run dev
     ```
    The frontend will run on `http://localhost:3000`.
 
@@ -146,6 +153,7 @@ cd automated-blogging-assistant
 3. **Create Drafts:** Once logged in, you can create new drafts at `/create-draft`.
 4. **View Drafts:** Access all your saved drafts at `/view-drafts`.
 5. **Generate Content:** Utilize the AI-powered content generation feature at `/generate-content`.
+6. **Publish Blogs**: Publish your generated content directly to Medium using the `/publish-content `feature.
 
 ## API Integration
 The frontend interacts with the backend using the following API endpoints:
@@ -156,5 +164,6 @@ The frontend interacts with the backend using the following API endpoints:
   - `POST /api/drafts`: Save a new draft.
   - `GET /api/drafts`: Retrieve all drafts.
   - `POST /api/drafts/generate`: Generate content.
+  - `POST /api/drafts/publish`: Publish a blog to Medium.
 
 **Note:** API requests include JWT tokens for authentication, which are managed in the `AuthContext`.
