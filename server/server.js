@@ -8,7 +8,7 @@ dotenv.config();
 connectDB();
 
 const corsOptions = {
-    origin: 'http://localhost:5173', 
+    origin: 'https://automated-blogging-assistant-frontend.onrender.com', 
     methods: ['GET', 'POST', 'PUT', 'DELETE'], 
     credentials: true, 
 }

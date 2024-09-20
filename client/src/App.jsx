@@ -1,13 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
-import Register from "./components/Auth/Register";
-import Login from "./components/Auth/Login";
-import CreateDraft from "./components/Blog/CreateDraft";
+import Register from "./components/auth/register";
+import Login from "./components/auth/login";
+import CreateDraft from "./components/blog/createDraft";
 import ViewDrafts from "./components/blog/viewDraft";
-import GenerateContent from "./components/Blog/GenerateContent";
-import Header from "./components/Layout/Header";
+import GenerateContent from "./components/blog/generateContent";
+import Header from "./components/layout/header";
 import { AuthProvider, AuthContext } from "./context/authContext";
-import { Container } from "@mui/material";  // Adding container for consistent layout
+import { Container } from "@mui/material";
 
 function App() {
   return (

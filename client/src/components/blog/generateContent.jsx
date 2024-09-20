@@ -4,7 +4,7 @@ import { TextField, Button, Box, Typography, Paper } from "@mui/material";
 import ReactMarkdown from "react-markdown";
 import axios from "axios";
 
-function GenerateContent() {
+const GenerateContent = () => {
   const [keywords, setKeywords] = useState("");
   const [generatedContent, setGeneratedContent] = useState("");
   const [status, setStatus] = useState("idle");
